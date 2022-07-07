@@ -1,0 +1,116 @@
+create table events
+(
+	Serial_No int(3) primary key not null,
+	Name_of_event text,
+	Date date,
+	Location text
+);
+
+insert into events VALUES (1,'movie','2022-05-18','PVR Prashant Vihar');
+insert into events VALUES (2,'concert','2022-05-19','Apex auditorium');
+insert into events VALUES (3,'football match','2022-05-20','JLN stadium');
+insert into events VALUES (4,'cricket match','2022-05-21','AJ stadium');
+insert into events VALUES (5,'tedx session','2022-05-22','BR auditorium');
+insert into events VALUES (6,'Seminar','2022-05-23','BR auditorium');
+
+
+
+CREATE TABLE `project_dbms`.`concert` 
+( `Serial No.` INT(3) NOT NULL AUTO_INCREMENT ,
+`name` TEXT NOT NULL , `age` INT(3) NOT NULL ,
+`gender` VARCHAR(8) NOT NULL ,
+`email` VARCHAR(22) NOT NULL ,
+`phone` VARCHAR(10) NOT NULL ,
+`desc` TEXT NOT NULL ,
+`date` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ,
+PRIMARY KEY (`Serial No.`)) ENGINE = InnoDB;
+
+alter table concert
+add constraint check_seat check(Serial No.<=100);
+alter table concert
+add constraint check_date check(date<events.Date where events.Name_of_event like 'concert');
+
+insert into concert VALUES(1,'Vivek',20,'male','vivek2014krt@gmail','8130067258','Nice','2022-04-24');
+
+
+CREATE TABLE `project_dbms`.`movie` 
+( `Serial No.` INT(3) NOT NULL AUTO_INCREMENT ,
+`name` TEXT NOT NULL , `age` INT(3) NOT NULL ,
+`gender` VARCHAR(8) NOT NULL ,
+`email` VARCHAR(22) NOT NULL ,
+`phone` VARCHAR(10) NOT NULL ,
+`desc` TEXT NOT NULL ,
+`date` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ,
+PRIMARY KEY (`Serial No.`)) ENGINE = InnoDB;
+
+alter table movie
+add constraint check_seat check(Serial No.<=100);
+alter table movie
+add constraint check_date check(date<events.Date where events.Name_of_event like 'concert');
+
+
+CREATE TABLE `project_dbms`.`football_match` 
+( `Serial No.` INT(3) NOT NULL AUTO_INCREMENT ,
+`name` TEXT NOT NULL , `age` INT(3) NOT NULL ,
+`gender` VARCHAR(8) NOT NULL ,
+`email` VARCHAR(22) NOT NULL ,
+`phone` VARCHAR(10) NOT NULL ,
+`desc` TEXT NOT NULL ,
+`date` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ,
+PRIMARY KEY (`Serial No.`)) ENGINE = InnoDB;
+
+alter table football_match
+add constraint check_seat check(Serial No.<=100);
+alter table football_match
+add constraint check_date check(date<events.Date where events.Name_of_event like 'concert');
+
+
+CREATE TABLE `project_dbms`.`cricket_match` 
+( `Serial No.` INT(3) NOT NULL AUTO_INCREMENT ,
+`name` TEXT NOT NULL , `age` INT(3) NOT NULL ,
+`gender` VARCHAR(8) NOT NULL ,
+`email` VARCHAR(22) NOT NULL ,
+`phone` VARCHAR(10) NOT NULL ,
+`desc` TEXT NOT NULL ,
+`date` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ,
+PRIMARY KEY (`Serial No.`)) ENGINE = InnoDB;
+
+alter table cricket_match
+add constraint check_seat check(Serial No.<=100);
+alter table cricket_match
+add constraint check_date check(date<events.Date where events.Name_of_event like 'concert');
+
+
+CREATE TABLE `project_dbms`.`tedx_session` 
+( `Serial No.` INT(3) NOT NULL AUTO_INCREMENT ,
+`name` TEXT NOT NULL , `age` INT(3) NOT NULL ,
+`gender` VARCHAR(8) NOT NULL ,
+`email` VARCHAR(22) NOT NULL ,
+`phone` VARCHAR(10) NOT NULL ,
+`desc` TEXT NOT NULL ,
+`date` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ,
+PRIMARY KEY (`Serial No.`)) ENGINE = InnoDB;
+
+alter table tedx_session
+add constraint check_seat check(Serial No.<=100);
+alter table tedx_session
+add constraint check_date check(date<events.Date where events.Name_of_event like 'concert');
+
+
+CREATE TABLE `project_dbms`.`seminar` 
+( `Serial No.` INT(3) NOT NULL AUTO_INCREMENT ,
+`name` TEXT NOT NULL , `age` INT(3) NOT NULL ,
+`gender` VARCHAR(8) NOT NULL ,
+`email` VARCHAR(22) NOT NULL ,
+`phone` VARCHAR(10) NOT NULL ,
+`desc` TEXT NOT NULL ,
+`date` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ,
+PRIMARY KEY (`Serial No.`)) ENGINE = InnoDB;
+
+alter table seminar
+add constraint check_seat check(Serial No.<=100);
+alter table seminar
+add constraint check_date check(date<events.Date where events.Name_of_event like 'concert');
+
+
+
